@@ -8,32 +8,10 @@
     ".NETCoreApp,Version=v6.0": {
       "BlazorApp1/1.0.0": {
         "dependencies": {
-          "ChartJs.Blazor": "1.1.0",
-          "ChartJs.Blazor.Fork": "2.0.2",
           "WMBlazorInternationalization": "1.0.1"
         },
         "runtime": {
           "BlazorApp1.dll": {}
-        }
-      },
-      "ChartJs.Blazor/1.1.0": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Components.Web": "5.0.0",
-          "Microsoft.CSharp": "4.7.0",
-          "Newtonsoft.Json": "12.0.3"
-        }
-      },
-      "ChartJs.Blazor.Fork/2.0.2": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Components.Web": "5.0.0",
-          "Microsoft.CSharp": "4.7.0",
-          "Newtonsoft.Json": "12.0.3"
-        },
-        "runtime": {
-          "lib/netstandard2.1/ChartJs.Blazor.dll": {
-            "assemblyVersion": "2.0.2.0",
-            "fileVersion": "2.0.2.0"
-          }
         }
       },
       "Microsoft.AspNetCore.Authorization/5.0.0": {
@@ -65,7 +43,6 @@
         }
       },
       "Microsoft.AspNetCore.Metadata/5.0.0": {},
-      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Extensions.DependencyInjection/5.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
@@ -81,14 +58,6 @@
       },
       "Microsoft.Extensions.Primitives/5.0.0": {},
       "Microsoft.JSInterop/5.0.0": {},
-      "Newtonsoft.Json/12.0.3": {
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.3.23909"
-          }
-        }
-      },
       "System.IO.Pipelines/5.0.0": {},
       "System.Net.Http.Json/5.0.0": {},
       "WMBlazorInternationalization/1.0.1": {
@@ -110,20 +79,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "ChartJs.Blazor/1.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-MUGYzS5FSx9r17sPVRlREPWU+1mFtggFaQtGKifQg30I48tx3OEDH3JZd07r+jKwtpN/h89HVUYy3IT2FS8ZEw==",
-      "path": "chartjs.blazor/1.1.0",
-      "hashPath": "chartjs.blazor.1.1.0.nupkg.sha512"
-    },
-    "ChartJs.Blazor.Fork/2.0.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-1aJR2uX3Al1OnWsTOIza2UV4oDZcmspOhliXQ2f9rpAOCuwT0BPbN0eFYT3Fzp5aWU9+9tfyhPlQO48UwpfKVQ==",
-      "path": "chartjs.blazor.fork/2.0.2",
-      "hashPath": "chartjs.blazor.fork.2.0.2.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/5.0.0": {
       "type": "package",
@@ -167,13 +122,6 @@
       "path": "microsoft.aspnetcore.metadata/5.0.0",
       "hashPath": "microsoft.aspnetcore.metadata.5.0.0.nupkg.sha512"
     },
-    "Microsoft.CSharp/4.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
-      "path": "microsoft.csharp/4.7.0",
-      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
-    },
     "Microsoft.Extensions.DependencyInjection/5.0.0": {
       "type": "package",
       "serviceable": true,
@@ -215,13 +163,6 @@
       "sha512": "sha512-qhLTZMoOsAbDWwE7M+VbjxH3EuP654tclaOhi6Sf7Xh6bj6TXDO0GiNQeNPdebMClKMGELJezOwbFp1BFB+9Ug==",
       "path": "microsoft.jsinterop/5.0.0",
       "hashPath": "microsoft.jsinterop.5.0.0.nupkg.sha512"
-    },
-    "Newtonsoft.Json/12.0.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
-      "path": "newtonsoft.json/12.0.3",
-      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
     "System.IO.Pipelines/5.0.0": {
       "type": "package",

@@ -22,11 +22,11 @@
 
 
 @code {
-        [CascadingParameter(Name = "CascadeWMBI")]
-        protected WMBInternationalization WMBI { get; set; }
+    [CascadingParameter(Name = "CascadeWMBI")]
+    protected WMBInternationalization WMBI { get; set; }
 
-        [Parameter]
-        public string? lang { get; set; }
+    [Parameter]
+    public string? lang { get; set; }
 
     private int currentCount = 5;
 
