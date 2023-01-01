@@ -5,36 +5,36 @@
 <PageTitle>Test</PageTitle>
 <h1>@WMBI.GetTranslation("helloworld")</h1>
 
-@WMBI.GetCurrentLang()
+<p>Current language set: @WMBI.GetCurrentLang() </p>
 
-@lang
+<p>Current url param set: @lang</p>
 
-<p><a href="/en/">Link to English</a></p>
-<p><a href="/pt/">Link to Portugese</a></p>
-@currentCount
-<Chart Id="pie2" Type="@Chart.ChartType.Pie"
+<p><a href="/en/">@WMBI.GetTranslation("English")</a></p>
+<p><a href="/pt/">@WMBI.GetTranslation("Portuguese")</a></p>
+<p>@WMBI.GetTranslation("Income"): @WMBI.GetTranslation("Currency")@currentCount</p>
+<Chart Id="pie2" Type="@Chart.ChartType.Doughnut"
        Data="@(new[] { currentCount.ToString(), "20" })"
        BackgroundColor="@(new[] { "blue","green" })"
-       Labels="@(new[] { "Income","Expense" })">
+       Labels="@(new[] { WMBI.GetTranslation("Income"),WMBI.GetTranslation("Expense") })">
 </Chart>
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary" @onclick="IncrementCount">+1 @WMBI.GetTranslation("Income")</button>
 
 
 
 @code {
-    [CascadingParameter(Name = "CascadeWMBI")]
-    protected WMBInternationalization WMBI { get; set; }
+        [CascadingParameter(Name = "CascadeWMBI")]
+        protected WMBInternationalization WMBI { get; set; }
 
-    [Parameter]
-    public string? lang { get; set; }
+        [Parameter]
+        public string? lang { get; set; }
 
     private int currentCount = 5;
 
     private async void IncrementCount()
     {
         currentCount++;
-        
-        await JSRuntime.InvokeVoidAsync("addData", "Income", currentCount, "Expense",20);
+
+        await JSRuntime.InvokeVoidAsync("addData", WMBI.GetTranslation("Income"), currentCount, WMBI.GetTranslation("Expense"), 20);
     }
 
     private bool SelectedLanguage(string lang)
@@ -42,16 +42,18 @@
         return (WMBI.GetCurrentLang() == lang);
     }
 
-    private void ChangeLanguage()
+    private async void ChangeLanguage()
     {
-        string selectedString = lang.ToString();
-        // selectedString = "en";
+        string selectedString = "en";
+        if (lang!=null) selectedString = lang.ToString();
+        //JSRuntime.InvokeAsync<string>("console.log", selectedString);
         WMBI.SetLanguage(selectedString);
     }
 
-    
+
     protected override async Task OnInitializedAsync()
     {
+        
         ChangeLanguage();
     }
     protected override void OnAfterRender(bool firstRender)

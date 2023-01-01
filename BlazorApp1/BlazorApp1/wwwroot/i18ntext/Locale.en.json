@@ -1,7 +1,10 @@
 {
-	"helloworld": "Localized text 1",
+	"helloworld": "Hello World",
 	"Key2": "Localized text 2",
 	"English": "English",
 	"Portuguese": "Portuguese",
-	"About": "About"
+	"About": "About",
+	"Currency": "£",
+	"Income": "Income",
+	"Expense":  "Expense"
 }

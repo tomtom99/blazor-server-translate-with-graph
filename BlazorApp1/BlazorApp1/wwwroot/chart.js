@@ -12,13 +12,15 @@ window.setup = (id, config) => {
 }
 
 function addData(label, data, label2, data2) {
-
+    // change this to take a json object.
+    /*  {labels:["one","two"],
+     *   data:[1,2]
+     *   }
+     */
     // clear data
-    chart.data.labels.pop();
-    chart.data.labels.pop();
+    chart.data.labels = [];
     chart.data.datasets.forEach((dataset) => {
-        dataset.data.pop();
-        dataset.data.pop();
+        dataset.data = [];
     });
     // add data
     chart.data.labels.push(label);
@@ -29,6 +31,9 @@ function addData(label, data, label2, data2) {
     chart.data.datasets.forEach((dataset) => {
         dataset.data.push(data2);
     });
+    chart.update();
+}
+function updateChart() {
     chart.update();
 }
 function removeData() {

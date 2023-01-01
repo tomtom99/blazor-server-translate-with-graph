@@ -1,6 +1,9 @@
 {
 	"helloworld": "Olá Mundo",
-	"English": "English",
-	"Portuguese": "Portuguese",
-	"About": "cerca de"
+	"English": "Inglês",
+	"Portuguese": "Português",
+	"About": "cerca de",
+	"Currency": "€",
+	"Income": "Renda",
+	"Expense": "Despesa"
 }
