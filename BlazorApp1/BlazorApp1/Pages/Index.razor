@@ -2,6 +2,7 @@
 @page "/{lang}/"
 
 @*inject IStringLocalizer localizer*@
+@inject IJSRuntime JSRuntime
 
 
 
@@ -16,13 +17,14 @@
 Welcome to your new app.
 <p><a href="/en/">Link to English</a></p>
 <p><a href="/pt/">Link to Portugese</a></p>
+@currentCount
 <Chart Id="pie2" Type="@Chart.ChartType.Pie"
-       Data="@(new[] { "1", "2" })"
+       Data="@(new[] { currentCount.ToString(), "2" })"
        BackgroundColor="@(new[] { "blue","green" })"
        Labels="@(new[] { "Fail","Ok" })">
 </Chart>
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
 
 
 @code {
@@ -32,6 +34,18 @@ Welcome to your new app.
     [Parameter]
     public string? lang { get; set; }
 
+    private int currentCount = 5;
+
+
+    //private var data = { currentCount.ToString(), "2" };
+
+    private async void IncrementCount()
+    {
+        currentCount++;
+        StateHasChanged();
+        await JSRuntime.InvokeVoidAsync("addData", "pie2", "Fail", currentCount);
+        //await JS.InvokeVoidAsync("addData", "pie2", "Fail", currentCount);
+    }
 
     private bool SelectedLanguage(string lang)
     {
