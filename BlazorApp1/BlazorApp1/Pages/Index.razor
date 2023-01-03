@@ -12,11 +12,14 @@
 <p><a href="/en/">@WMBI.GetTranslation("English")</a></p>
 <p><a href="/pt/">@WMBI.GetTranslation("Portuguese")</a></p>
 <p>@WMBI.GetTranslation("Income"): @WMBI.GetTranslation("Currency")@currentCount</p>
-<Chart Id="pie2" Type="@Chart.ChartType.Doughnut"
-       Data="@(new[] { currentCount.ToString(), "20" })"
-       BackgroundColor="@(new[] { "blue","green" })"
-       Labels="@(new[] { WMBI.GetTranslation("Income"),WMBI.GetTranslation("Expense") })">
-</Chart>
+<div style="max-width:500px">
+    <Chart Id="pie2" Type="@Chart.ChartType.Doughnut"
+           Data="@(new[] { currentCount.ToString(), "20" })"
+           BackgroundColor="@(new[] { "blue","green" })"
+           Labels="@(new[] { WMBI.GetTranslation("Income"),WMBI.GetTranslation("Expense") })">
+    </Chart>
+</div>
+
 <button class="btn btn-primary" @onclick="IncrementCount">+1 @WMBI.GetTranslation("Income")</button>
 
 
